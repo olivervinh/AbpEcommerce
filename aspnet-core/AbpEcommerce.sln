@@ -37,7 +37,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbpEcommerce.HttpApi.Client
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbpEcommerce.DbMigrator", "src\AbpEcommerce.DbMigrator\AbpEcommerce.DbMigrator.csproj", "{AA94D832-1CCC-4715-95A9-A483F23A1A5D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "identity", "identity", "{65D96F10-D76D-4693-8D7E-5457C1156662}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "auth", "auth", "{65D96F10-D76D-4693-8D7E-5457C1156662}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{FF7D04C4-1C85-4883-83ED-DB7AA6B3FA74}"
 EndProject
