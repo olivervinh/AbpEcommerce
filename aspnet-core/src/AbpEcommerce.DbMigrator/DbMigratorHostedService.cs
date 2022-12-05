@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using AbpEcommerce.Data;
 using Serilog;
 using Volo.Abp;
+using AbpEcommerce.Seeding;
 
 namespace AbpEcommerce.DbMigrator;
 
@@ -35,7 +36,10 @@ public class DbMigratorHostedService : IHostedService
                 .ServiceProvider
                 .GetRequiredService<AbpEcommerceDbMigrationService>()
                 .MigrateAsync();
-
+            await application
+               .ServiceProvider
+               .GetRequiredService<IdentityDataSeeder>()
+               .SeedAsync("admin@tedu.com.vn","Abc@123$");
             await application.ShutdownAsync();
 
             _hostApplicationLifetime.StopApplication();
