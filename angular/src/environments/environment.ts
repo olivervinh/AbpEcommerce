@@ -6,21 +6,22 @@ export const environment = {
   production: false,
   application: {
     baseUrl,
-    name: 'AbpEcommerce',
+    name: 'AbpEcommerce Admin',
     logoUrl: '',
   },
   oAuthConfig: {
-    issuer: 'https://localhost:44328/',
+    issuer: 'https://localhost:5000/',
     redirectUri: baseUrl,
-    clientId: 'AbpEcommerce_App',
+    clientId: 'AbpEcommerce_Admin',
     responseType: 'code',
-    scope: 'offline_access AbpEcommerce',
-    requireHttps: true,
+    scope: 'AbpEcommerce.Admin offline_access',
+    requireHttps: true
+
   },
   apis: {
     default: {
-      url: 'https://localhost:44391',
-      rootNamespace: 'AbpEcommerce',
+      url: 'https://localhost:5001',
+      rootNamespace: 'AbpEcommerce.Admin',
     },
   },
 } as Environment;
