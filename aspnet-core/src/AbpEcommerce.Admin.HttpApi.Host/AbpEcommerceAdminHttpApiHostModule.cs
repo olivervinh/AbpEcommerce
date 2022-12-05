@@ -114,11 +114,11 @@ public class AbpEcommerceAdminHttpApiHostModule : AbpModule
             configuration["AuthServer:Authority"],
             new Dictionary<string, string>
             {
-                    {"AbpEcommerce.Admin", "AbpEcommerce.Admin API"}
+                    {"AbpEcommerce.Admin", "AbpEcommerce Admin API"}
             },
             options =>
             {
-                options.SwaggerDoc("v1", new OpenApiInfo { Title = "AbpEcommerce API", Version = "v1" });
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "AbpEcommerce Admin API", Version = "v1" });
                 options.DocInclusionPredicate((docName, description) => true);
                 options.CustomSchemaIds(type => type.FullName);
             });
@@ -163,7 +163,7 @@ public class AbpEcommerceAdminHttpApiHostModule : AbpModule
             dataProtectionBuilder.PersistKeysToStackExchangeRedis(redis, "AbpEcommerce-Protection-Keys");
         }
     }
-    
+
     private void ConfigureDistributedLocking(
         ServiceConfigurationContext context,
         IConfiguration configuration)
@@ -229,7 +229,7 @@ public class AbpEcommerceAdminHttpApiHostModule : AbpModule
 
             var configuration = context.GetConfiguration();
             options.OAuthClientId(configuration["AuthServer:SwaggerClientId"]);
-            options.OAuthScopes("AbpEcommerce");
+            options.OAuthScopes("AbpEcommerce.Admin");
         });
 
         app.UseAuditing();
